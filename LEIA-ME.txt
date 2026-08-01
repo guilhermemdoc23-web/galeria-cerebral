@@ -1,0 +1,24 @@
+GALERIA CEREBRAL V2 — PAINEL COM INDEXEDDB
+
+CORREÇÕES
+- Novas obras agora podem usar imagens grandes.
+- O painel não depende mais do limite pequeno do localStorage.
+- Novas salas são criadas mesmo quando o identificador já existe:
+  o sistema acrescenta automaticamente -2, -3 etc.
+- Dados antigos presos no navegador são removidos.
+- Salas, obras, autor e posições ficam salvos no IndexedDB.
+- Exportação do index.html continua funcionando.
+
+USO
+1. Abra admin.html.
+2. Crie ou edite salas e obras.
+3. Arraste as salas no cérebro.
+4. Clique em Baixar index.html atualizado.
+5. Substitua o index.html no GitHub.
+
+
+AJUSTE ADICIONAL DE MOBILE
+- A janela das obras agora permite rolagem vertical.
+- A descrição completa pode ser lida até o final.
+- A imagem não é cortada.
+- Setas e botão de fechar continuam acessíveis.

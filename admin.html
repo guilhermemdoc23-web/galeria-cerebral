@@ -1,0 +1,37 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Painel | Galeria Cerebral</title><link rel="stylesheet" href="admin.css"></head>
+<body><header class="admin-top"><div><div class="kicker">PAINEL DA GALERIA</div><h1>Gerenciar Galeria Cerebral</h1></div><div class="actions"><a href="index.html" target="_blank">Ver galeria</a><button id="restore">Restaurar original</button><button id="exportIndex" class="primary">Baixar index.html atualizado</button></div></header>
+<main>
+<section class="panel"><div class="section-head"><div><div class="kicker">SALAS</div><h2>Organização</h2></div><button id="newRoom" type="button" class="primary">+ Nova sala</button></div><div id="roomList" class="cards"></div></section>
+<section class="panel"><div class="section-head"><div><div class="kicker">EDITOR VISUAL</div><h2>Arraste as salas pelo cérebro</h2></div><span id="positionStatus" class="status">Arraste e solte</span></div><p class="note">Segure a sala com o mouse e solte onde quiser. Depois exporte o novo index.html.</p><div id="brainEditor" class="brain-editor"><svg viewBox="0 0 1200 760"><path class="editor-brain" d="M596 104C530 42 414 45 358 103C284 80 208 124 198 201C111 223 89 323 144 378C88 454 132 566 220 587C236 663 332 696 399 655C457 710 554 683 592 620C610 680 710 709 773 654C846 695 945 658 961 584C1047 558 1086 453 1031 382C1091 324 1064 220 979 202C968 126 893 82 818 104C760 42 657 45 596 104Z"/></svg><div id="editorNodes"></div></div></section>
+
+<section class="panel">
+  <div class="section-head">
+    <div><div class="kicker">SOBRE O AUTOR</div><h2>Apresentação do artista</h2></div>
+    <button id="saveAuthor" class="primary">Salvar apresentação</button>
+  </div>
+  <p class="note">Edite o botão, a foto, os textos, as técnicas e o Instagram. Depois exporte o novo index.html.</p>
+  <div class="author-admin-grid">
+    <div class="author-admin-form">
+      <label>Texto do botão<input id="authorButtonLabel"></label>
+      <label>Chamada pequena<input id="authorKickerInput"></label>
+      <label>Nome<input id="authorNameInput"></label>
+      <label>Cargo ou apresentação<input id="authorRoleInput"></label>
+      <label>Texto sobre o autor<textarea id="authorTextInput" rows="12"></textarea></label>
+      <label>Técnicas e influências, separadas por vírgula<input id="authorTagsInput"></label>
+      <label>Instagram<input id="authorInstagramInput"></label>
+      <label>Link do Instagram<input id="authorInstagramUrlInput"></label>
+      <label>Trocar foto<input id="authorPhotoFile" type="file" accept="image/*"></label>
+    </div>
+    <div class="author-admin-preview">
+      <img id="authorPhotoPreview" alt="Prévia da foto do autor">
+      <strong id="authorNamePreview"></strong>
+      <span id="authorRolePreview"></span>
+    </div>
+  </div>
+</section>
+
+<section class="panel"><div class="section-head"><div><div class="kicker">OBRAS</div><h2>Acervo</h2></div><button id="newArt" type="button" class="primary">+ Nova obra</button></div><p class="note">Escolha imagens diretamente do computador. Elas serão embutidas no novo index.html.</p><div id="artList" class="art-list"></div></section>
+</main>
+<dialog id="roomDialog"><form id="roomForm"><h2 id="roomDialogTitle"></h2><input type="hidden" name="index"><label>Identificador<input name="id" required></label><label>Nome<input name="title" required></label><label>Etiqueta<input name="tag" required></label><label>Descrição<textarea name="description" rows="5"></textarea></label><label>Cor<input name="color" type="color"></label><input type="hidden" name="x"><input type="hidden" name="y"><div class="dialog-actions"><button type="button" class="secondary" data-close="roomDialog">Cancelar</button><button id="saveRoomButton" type="submit" class="primary">Adicionar sala</button></div></form></dialog>
+<dialog id="artDialog"><form id="artForm"><h2 id="artDialogTitle"></h2><input type="hidden" name="index"><label>Sala<select name="roomId"></select></label><label>Título<input name="title" required></label><label>Técnica e descrição<textarea name="caption" rows="7"></textarea></label><label>Escolher imagem<input id="imageFile" type="file" accept="image/*"></label><img id="artPreview" class="preview" alt=""><div class="dialog-actions"><button type="button" class="secondary" data-close="artDialog">Cancelar</button><button id="saveArtButton" type="submit" class="primary">Adicionar obra</button></div></form></dialog>
+<script src="admin-data.js"></script><script src="gallery-template.js"></script><script src="admin.js"></script></body></html>
